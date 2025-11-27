@@ -1,0 +1,76 @@
+<!-- https://visjs.github.io/vis-network/docs/network/ -->
+<html>
+
+<head>
+    <title>Graph</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"></script>
+
+    <style type="text/css">
+        #mynetwork {
+            width: 100%;
+            height: 100%;
+            background-color: whitesmoke;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="mynetwork"></div>
+
+    <script type="text/javascript">
+        // This method is responsible for drawing the graph, returns the drawn network
+        function drawGraph() {
+            var container = document.getElementById('mynetwork');
+
+            // nodes and edges
+            //{{nodes}}
+            //{{edges}}
+
+            // adding nodes and edges to the graph
+            data = {
+                nodes: nodes,
+                edges: edges
+            };
+
+            var options = {
+                nodes: {
+                    shape: "circle",//dot
+                    scaling: {
+                        min: 10,   // Kích thước nhỏ nhất của node
+                        max: 60,   // Kích thước lớn nhất của node
+                        label: {
+                            min: 8, // Kích thước chữ tối thiểu
+                            max: 24, // Kích thước chữ tối đa
+                        },
+                    },
+                },
+                "edges":
+                {
+                    "color": {
+                        "inherit": true
+                    },
+                    "smooth": {
+                        "enabled": false,
+                        "type": "continuous"
+                    },
+                    arrows: {
+                        "to": { enabled: true, scaleFactor: 0.5 }
+                    }
+                },
+                "physics": {
+                    "enabled": false
+                }
+            };
+            network = new vis.Network(container, data, options);
+        }
+        
+        drawGraph();
+    </script>
+</body>
+
+</html>

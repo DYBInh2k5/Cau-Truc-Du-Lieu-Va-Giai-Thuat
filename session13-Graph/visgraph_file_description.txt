@@ -1,0 +1,2 @@
+Line 1: number_of_nodes,number_of_edges
+Line 2: src_id,des_id,weight

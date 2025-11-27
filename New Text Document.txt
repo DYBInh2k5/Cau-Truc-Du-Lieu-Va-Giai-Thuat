@@ -1,0 +1,9 @@
+đệ qui danh sách thứ tự liên kết cây
+
+ds liên kết đơn ss7
+ stack ss8
+ds kép ss7
+ds hạn chế ss7
+cách tạo danh sách 1.3 1.7 ss7
+in danh sách
+số thập phân sang nhị phân 1.1 ss8
